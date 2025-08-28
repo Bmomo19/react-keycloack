@@ -27,11 +27,11 @@ export class KeycloakService {
 
     setupTokenRefresh() {
         // Rafraîchir le token automatiquement
-        setInterval(() => {
+        this.keycloak.onTokenExpired = () => {
             this.keycloak.updateToken(30).catch(() => {
                 console.log('Impossible de rafraîchir le token');
             });
-        }, 30000);
+        };
     }
 
     login() {

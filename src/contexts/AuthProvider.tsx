@@ -22,7 +22,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setIsAuthenticated(authenticated);
         if (authenticated) {
           setUser(_kc.getUserInfo());
-          console.log(_kc.getUserInfo());
         }
       } catch (error) {
         console.error("Erreur d'initialisation de l'authentification:", error);
