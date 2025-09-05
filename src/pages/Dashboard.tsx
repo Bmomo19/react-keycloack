@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await api.get('/protected-data');
+        const response = await api.get('/auth/user');
         setData(response);
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
